@@ -101,9 +101,11 @@
                         <td><?= $studen['phone']; ?></td>
                         <td><?= $studen['Dep'];   ?></td>
                         <td>                        
-                        <div class=" "></div><button class="btn btn-info btn-sm">info</button>
-                        <button class="btn btn-warning btn-sm">Edit</button>
-                        <button class="btn btn-danger btn-sm">Delete</button></td>
+
+                        
+                        <button class="btn btn-info btn-sm" id="infoStudentBtn">info</button>
+                        <button class="btn btn-warning btn-sm" id="editeStudentBtn">Edite</button>
+                        <button class="btn btn-danger btn-sm" id="deleteStudentBtn">Delete</button></td>
                     </tr>
                     <?php
                         }
@@ -115,7 +117,74 @@
         </div>
       </div>
     </div>
-   </div>
+   
+
+<!-- ====================================infomodal=============================== -->
+<!-- Modal trigger button -->
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#infoStudentModal">
+  Launch
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="infoStudentModal" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+               
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <table>
+                        <tr>
+                            <th>Name:  </th>
+                            <td id="stName"></td>
+                        </tr>
+                        <tr>
+                            <th>Last Name:  </th>
+                            <td id="stLname"></td>
+                        </tr>
+                        <tr>
+                            <th>Email:  </th>
+                            <td id="stEmail"></td>
+                        </tr>
+                        <tr>
+                            <th>Phone:  </th>
+                            <td id="stPhone"></td>
+                        </tr>
+                        <tr>
+                            <th>Department:  </th>
+                            <td id="stDep"></td>
+                        </tr>
+
+                    </table>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var modalId = document.getElementById('modalId');
+
+    modalId.addEventListener('show.bs.modal', function (event) {
+          // Button that triggered the modal
+          let button = event.relatedTarget;
+          // Extract info from data-bs-* attributes
+          let recipient = button.getAttribute('data-bs-whatever');
+
+        // Use above variables to manipulate the DOM
+    });
+</script>
+
+
+</div>
+
+
+
 </body>
 <script src="./jQuery.js"></script>
 <script src="./javaS.js"></script>

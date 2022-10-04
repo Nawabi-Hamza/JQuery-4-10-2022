@@ -26,6 +26,32 @@ if(isset($_POST['save_student'])){
                     return;
         }
 }
+// ==============info
+if(isset($GET['studen_id'])){
+    $student_id = mysqli_real_escape_string($con , $GET['studen_id']);
+    $query = "SELECT * FROM studens WHERE id = '$student_id'";
+    $query_run = mysqli_query($con, $query);
+    if(mysqli_num_rows($query_run) == 1){
+        $student = mysqli_fecth_array($query_run);
+        $res = [
+            "status"=>200,
+            "message"=>'student selected',
+            "data"=>$student
+        ];
+        echo json_encode($res);
+        return;
+    }
+    else{
+        $student = mysqli_fecth_array($query_run);
+        $res = [
+            "status"=>404,
+            "message"=>'student not expected',
+            "data"=>$student
+        ];
+        echo json_encode($res);
+        return;
+    }
+}
 
 
 
